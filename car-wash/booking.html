@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Car Wash – ShinePro</title>
+  <meta name="description" content="Book your premium car wash in 6 easy steps. Watch your car get cleaner with every step!" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <style>body{font-family:'Inter',system-ui,sans-serif}</style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-car-wash brand-icon"></i>Shine<span>Pro</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ BOOKING HERO ═══ -->
+<div class="booking-hero">
+  <div class="container text-center position-relative">
+    <p class="mb-2" style="color:rgba(255,255,255,0.6);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:600">
+      <i class="fas fa-calendar-check me-2"></i>Online Booking
+    </p>
+    <h1>Book Your Car Wash</h1>
+    <p style="color:rgba(255,255,255,0.7);font-size:0.95rem;max-width:480px;margin:0 auto">
+      Complete the steps below to confirm your booking. Watch your car get cleaner with every step!
+    </p>
+  </div>
+</div>
+
+<!-- ═══ CAR ANIMATION STRIP ═══ -->
+<div class="car-animation-strip">
+  <div class="container">
+    <div id="carTrack" class="car-track">
+      <div class="car-track-road"></div>
+      <div id="carStepLabel" class="car-step-label">🚗 Dirty Car — Select Service</div>
+      <div id="carSvgWrap" class="car-svg-wrap" style="left:10px">
+        <!-- Car SVG -->
+        <svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+          <!-- Car body -->
+          <ellipse cx="60" cy="45" rx="50" ry="12" fill="#cbd5e1" opacity="0.3"/>
+          <rect x="20" y="30" width="80" height="20" rx="8" fill="#3b82f6"/>
+          <path d="M 30 30 Q 35 15 50 15 L 70 15 Q 85 15 90 30 Z" fill="#60a5fa"/>
+          <!-- Windows -->
+          <path d="M 38 22 Q 42 18 50 18 L 55 18 L 55 28 L 38 28 Z" fill="#dbeafe" opacity="0.6"/>
+          <path d="M 65 18 L 70 18 Q 78 18 82 22 L 82 28 L 65 28 Z" fill="#dbeafe" opacity="0.6"/>
+          <!-- Wheels -->
+          <circle cx="35" cy="50" r="8" fill="#1e293b"/>
+          <circle cx="35" cy="50" r="4" fill="#64748b"/>
+          <circle cx="85" cy="50" r="8" fill="#1e293b"/>
+          <circle cx="85" cy="50" r="4" fill="#64748b"/>
+          <!-- Headlights -->
+          <circle cx="18" cy="38" r="3" fill="#fef08a"/>
+          <circle cx="102" cy="38" r="3" fill="#fca5a5"/>
+          <!-- Dirt overlay -->
+          <g id="carDirt" style="opacity:1">
+            <ellipse cx="45" cy="25" rx="8" ry="5" fill="#78716c" opacity="0.4"/>
+            <ellipse cx="70" cy="28" rx="10" ry="6" fill="#78716c" opacity="0.35"/>
+            <ellipse cx="55" cy="35" rx="12" ry="4" fill="#78716c" opacity="0.3"/>
+            <ellipse cx="30" cy="40" rx="6" ry="3" fill="#78716c" opacity="0.4"/>
+            <ellipse cx="88" cy="42" rx="7" ry="3" fill="#78716c" opacity="0.35"/>
+          </g>
+        </svg>
+        <!-- Wash drops overlay -->
+        <div id="washDrops" class="wash-drops">
+          <div class="wash-drop-anim" style="left:20%;top:10%;animation-delay:0s"></div>
+          <div class="wash-drop-anim" style="left:40%;top:15%;animation-delay:0.1s"></div>
+          <div class="wash-drop-anim" style="left:60%;top:12%;animation-delay:0.2s"></div>
+          <div class="wash-drop-anim" style="left:80%;top:18%;animation-delay:0.15s"></div>
+          <div class="wash-drop-anim" style="left:30%;top:8%;animation-delay:0.25s"></div>
+          <div class="wash-drop-anim" style="left:70%;top:20%;animation-delay:0.05s"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MAIN BOOKING AREA ═══ -->
+<div class="container py-4">
+
+  <!-- Step Indicator -->
+  <div class="step-indicator-wrap">
+    <div class="step-indicator">
+      <div class="step-item active" id="si-1">
+        <div class="step-dot">1</div>
+        <span class="step-label">Service</span>
+      </div>
+      <div class="step-item" id="si-2">
+        <div class="step-dot">2</div>
+        <span class="step-label">User Type</span>
+      </div>
+      <div class="step-item" id="si-3">
+        <div class="step-dot">3</div>
+        <span class="step-label">Car Type</span>
+      </div>
+      <div class="step-item" id="si-4">
+        <div class="step-dot">4</div>
+        <span class="step-label">Date & Time</span>
+      </div>
+      <div class="step-item" id="si-5">
+        <div class="step-dot">5</div>
+        <span class="step-label">Details</span>
+      </div>
+      <div class="step-item" id="si-6">
+        <div class="step-dot">6</div>
+        <span class="step-label">Summary</span>
+      </div>
+    </div>
+    <div class="booking-progress"><div class="booking-progress-bar" id="progressBar" style="width:0%"></div></div>
+  </div>
+
+  <!-- Booking Container -->
+  <div class="booking-container">
+
+    <!-- ─── STEP 1: Select Service ─────────────────── -->
+    <div class="form-step active" id="step-1">
+      <h4 class="step-heading">
+        <span class="step-num-badge">1</span>
+        Select a Service
+      </h4>
+      <p class="step-subheading">Choose the wash type that suits your car's needs.</p>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="booking-service-card" data-service="basic" onclick="selectService('basic')">
+            <div class="check-badge"><i class="fas fa-check"></i></div>
+            <div class="svc-icon-wrap blue">💧</div>
+            <div class="svc-title">Basic Exterior Wash</div>
+            <div class="svc-desc">Quick exterior rinse, hand wash, and window wipe-down.</div>
+            <div class="svc-price"><i class="fas fa-tag me-1"></i>From ₹199</div>
+            <div class="svc-meta">
+              <span class="badge bg-light text-secondary" style="font-size:0.7rem">~30 mins</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="booking-service-card" data-service="foam" onclick="selectService('foam')">
+            <div class="check-badge"><i class="fas fa-check"></i></div>
+            <div class="svc-icon-wrap cyan">🫧</div>
+            <div class="svc-title">Foam Wash</div>
+            <div class="svc-desc">Deep foam treatment, underbody rinse, and tyre dressing.</div>
+            <div class="svc-price"><i class="fas fa-tag me-1"></i>From ₹249</div>
+            <div class="svc-meta">
+              <span class="badge bg-primary text-white" style="font-size:0.7rem">Most Popular</span>
+              <span class="badge bg-light text-secondary" style="font-size:0.7rem">~45 mins</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="booking-service-card" data-service="full" onclick="selectService('full')">
+            <div class="check-badge"><i class="fas fa-check"></i></div>
+            <div class="svc-icon-wrap purple">⭐</div>
+            <div class="svc-title">Interior + Exterior</div>
+            <div class="svc-desc">Complete detailing — foam wash plus full interior vacuum and wipe.</div>
+            <div class="svc-price"><i class="fas fa-tag me-1"></i>From ₹329</div>
+            <div class="svc-meta">
+              <span class="badge bg-warning text-dark" style="font-size:0.7rem">Premium</span>
+              <span class="badge bg-light text-secondary" style="font-size:0.7rem">~75 mins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end mt-4">
+        <button class="btn-nav-next" onclick="nextStep()">
+          Next <i class="fas fa-arrow-right ms-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 2: User Type ──────────────────────── -->
+    <div class="form-step" id="step-2">
+      <h4 class="step-heading">
+        <span class="step-num-badge">2</span>
+        Select User Type
+      </h4>
+      <p class="step-subheading">Students get special discounted pricing on all services.</p>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="user-type-option" data-type="student" onclick="selectUserType('student')">
+            <div class="ut-check"><i class="fas fa-check"></i></div>
+            <div class="ut-icon student"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <div class="ut-label">Student</div>
+              <div class="ut-desc">Valid student ID required at service time.</div>
+            </div>
+            <div class="ms-auto">
+              <span class="badge bg-success" style="font-size:0.7rem">Save up to ₹90</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="user-type-option" data-type="others" onclick="selectUserType('others')">
+            <div class="ut-check"><i class="fas fa-check"></i></div>
+            <div class="ut-icon others"><i class="fas fa-user-tie"></i></div>
+            <div>
+              <div class="ut-label">Others</div>
+              <div class="ut-desc">Regular pricing for all non-student customers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn-nav-prev" onclick="prevStep()">
+          <i class="fas fa-arrow-left me-1"></i>Back
+        </button>
+        <button class="btn-nav-next" onclick="nextStep()">
+          Next <i class="fas fa-arrow-right ms-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 3: Car Type ───────────────────────── -->
+    <div class="form-step" id="step-3">
+      <h4 class="step-heading">
+        <span class="step-num-badge">3</span>
+        Select Car Type
+      </h4>
+      <p class="step-subheading">Pricing varies by car size. Select the type that matches your vehicle.</p>
+
+      <div class="row g-3">
+        <div class="col-4">
+          <div class="car-type-btn" data-car="hatchback" onclick="selectCarType('hatchback')">
+            <div class="car-check"><i class="fas fa-check"></i></div>
+            <span class="car-emoji">🚗</span>
+            <div class="car-label">Hatchback</div>
+            <div class="car-sub">Swift, i20, Polo</div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="car-type-btn" data-car="sedan" onclick="selectCarType('sedan')">
+            <div class="car-check"><i class="fas fa-check"></i></div>
+            <span class="car-emoji">🚙</span>
+            <div class="car-label">Sedan</div>
+            <div class="car-sub">City, Verna, Ciaz</div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="car-type-btn" data-car="suv" onclick="selectCarType('suv')">
+            <div class="car-check"><i class="fas fa-check"></i></div>
+            <span class="car-emoji">🛻</span>
+            <div class="car-label">SUV</div>
+            <div class="car-sub">Creta, Brezza, XUV</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3 p-3 rounded-3" style="background:#f8fbff;border:1px solid #dbeafe">
+        <p class="small text-muted mb-1 fw-semibold"><i class="fas fa-info-circle me-1 text-primary"></i>Pricing Guide</p>
+        <div class="row g-2 small text-muted">
+          <div class="col-12 col-sm-4"><strong>Hatchback</strong> — smallest size, lowest price</div>
+          <div class="col-12 col-sm-4"><strong>Sedan</strong> — mid-size, moderate price</div>
+          <div class="col-12 col-sm-4"><strong>SUV</strong> — largest size, premium price</div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn-nav-prev" onclick="prevStep()">
+          <i class="fas fa-arrow-left me-1"></i>Back
+        </button>
+        <button class="btn-nav-next" onclick="nextStep()">
+          Next <i class="fas fa-arrow-right ms-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 4: Date & Time ────────────────────── -->
+    <div class="form-step" id="step-4">
+      <h4 class="step-heading">
+        <span class="step-num-badge">4</span>
+        Select Date & Time
+      </h4>
+      <p class="step-subheading">Pick a convenient date and available time slot.</p>
+
+      <div class="mb-4">
+        <label class="form-label fw-semibold mb-2">
+          <i class="fas fa-calendar me-2 text-primary"></i>Select Date
+        </label>
+        <input type="date" id="inputDate" class="booking-input" style="max-width:300px" />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold mb-3">
+          <i class="fas fa-clock me-2 text-primary"></i>Select Time Slot
+        </label>
+        <div class="row g-2">
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="time-slot-btn" data-time="9:00 AM" onclick="selectTimeSlot('9:00 AM')">
+              <span class="slot-icon">🌅</span>
+              <span class="slot-text">9:00 AM</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="time-slot-btn" data-time="11:00 AM" onclick="selectTimeSlot('11:00 AM')">
+              <span class="slot-icon">☀️</span>
+              <span class="slot-text">11:00 AM</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="time-slot-btn" data-time="1:00 PM" onclick="selectTimeSlot('1:00 PM')">
+              <span class="slot-icon">🌤️</span>
+              <span class="slot-text">1:00 PM</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="time-slot-btn" data-time="3:00 PM" onclick="selectTimeSlot('3:00 PM')">
+              <span class="slot-icon">⛅</span>
+              <span class="slot-text">3:00 PM</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="time-slot-btn" data-time="5:00 PM" onclick="selectTimeSlot('5:00 PM')">
+              <span class="slot-icon">🌆</span>
+              <span class="slot-text">5:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn-nav-prev" onclick="prevStep()">
+          <i class="fas fa-arrow-left me-1"></i>Back
+        </button>
+        <button class="btn-nav-next" onclick="nextStep()">
+          Next <i class="fas fa-arrow-right ms-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 5: Enter Details ──────────────────── -->
+    <div class="form-step" id="step-5">
+      <h4 class="step-heading">
+        <span class="step-num-badge">5</span>
+        Your Details
+      </h4>
+      <p class="step-subheading">We'll use these details to confirm your booking.</p>
+
+      <div class="row g-3" style="max-width:540px">
+        <div class="col-12">
+          <label class="form-label fw-semibold mb-2">
+            <i class="fas fa-user me-2 text-primary"></i>Full Name
+          </label>
+          <input type="text" id="inputName" class="booking-input" placeholder="e.g. Rahul Sharma" autocomplete="name" />
+          <div class="field-error" id="nameError"><i class="fas fa-exclamation-circle"></i>Please enter your name.</div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label fw-semibold mb-2">
+            <i class="fas fa-phone me-2 text-primary"></i>Phone Number
+          </label>
+          <div class="input-group">
+            <span class="input-group-text" style="border:2px solid #e2e8f0;border-right:none;border-radius:12px 0 0 12px;background:#f8faff;font-size:0.9rem">
+              🇮🇳 +91
+            </span>
+            <input type="tel" id="inputPhone" class="booking-input" placeholder="10-digit mobile number" maxlength="10" autocomplete="tel" style="border-radius:0 12px 12px 0;border-left:none" />
+          </div>
+          <div class="field-error" id="phoneError"><i class="fas fa-exclamation-circle"></i>Please enter a valid phone number.</div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn-nav-prev" onclick="prevStep()">
+          <i class="fas fa-arrow-left me-1"></i>Back
+        </button>
+        <button class="btn-nav-next" onclick="nextStep()">
+          Review Booking <i class="fas fa-arrow-right ms-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 6: Summary ───────────────────────── -->
+    <div class="form-step" id="step-6">
+      <h4 class="step-heading">
+        <span class="step-num-badge">6</span>
+        Booking Summary
+      </h4>
+      <p class="step-subheading">Review your booking details before confirming.</p>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="summary-card">
+            <div class="summary-row">
+              <span class="s-label"><i class="fas fa-car-wash"></i>Service</span>
+              <span class="s-value" id="sum-service">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="s-label"><i class="fas fa-user"></i>User Type</span>
+              <span class="s-value" id="sum-usertype">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="s-label"><i class="fas fa-car"></i>Car Type</span>
+              <span class="s-value" id="sum-cartype">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="s-label"><i class="fas fa-calendar"></i>Date</span>
+              <span class="s-value" id="sum-date">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="s-label"><i class="fas fa-clock"></i>Time</span>
+              <span class="s-value" id="sum-time">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="s-label"><i class="fas fa-id-card"></i>Name</span>
+              <span class="s-value" id="sum-name">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="s-label"><i class="fas fa-phone"></i>Phone</span>
+              <span class="s-value" id="sum-phone">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="price-display mb-3">
+            <div class="price-label"><i class="fas fa-tag me-1"></i>Your Price</div>
+            <div class="price-amount" id="sum-price">₹0</div>
+            <div class="price-note">Inclusive of all charges</div>
+          </div>
+
+          <div class="p-3 rounded-3 mb-3" style="background:#f0fff4;border:1px solid #b7ebc8">
+            <p class="small mb-0 text-success fw-semibold">
+              <i class="fas fa-shield-alt me-2"></i>Secure Booking
+            </p>
+            <p class="small mb-0 text-muted mt-1">
+              Your booking is confirmed instantly. No payment required online — pay at the wash center.
+            </p>
+          </div>
+
+          <button class="btn-confirm" onclick="confirmBooking()">
+            <i class="fas fa-check-circle btn-icon"></i>Confirm Booking
+          </button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-start mt-4">
+        <button class="btn-nav-prev" onclick="prevStep()">
+          <i class="fas fa-arrow-left me-1"></i>Back
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /booking-container -->
+</div><!-- /container -->
+
+<!-- ═══ TOAST NOTIFICATION ═══ -->
+<div id="errorToast" class="toast-notification">
+  <i id="toastIcon" class="fas fa-exclamation-circle toast-icon"></i>
+  <span id="toastMessage">Please complete this step.</span>
+</div>
+
+<!-- ═══ FOOTER (minimal) ═══ -->
+<footer class="footer py-3 mt-2">
+  <div class="container text-center">
+    <p class="small mb-0" style="color:rgba(255,255,255,0.5)">
+      © 2026 ShinePro Car Wash &nbsp;|&nbsp;
+      <a href="index.html" style="color:rgba(255,255,255,0.6)">Home</a> &nbsp;|&nbsp;
+      <a href="index.html#contact" style="color:rgba(255,255,255,0.6)">Contact</a>
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

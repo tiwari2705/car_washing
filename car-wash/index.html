@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShinePro – Premium Car Wash Booking</title>
+  <meta name="description" content="Book your premium car wash in seconds. Basic, Foam, or Full Interior+Exterior wash services." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <style>body{font-family:'Inter',system-ui,sans-serif}</style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-car-wash brand-icon"></i>Shine<span>Pro</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a class="btn-book-nav btn btn-sm" href="booking.html">
+            <i class="fas fa-calendar-check me-1"></i>Book Now
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero-section">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
+  <div id="heroParticles" class="hero-particles"></div>
+
+  <div class="container position-relative" style="z-index:2">
+    <div class="row align-items-center min-vh-100 py-5">
+
+      <div class="col-lg-6 hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Trusted by 10,000+ happy customers
+        </div>
+        <h1 class="hero-title">
+          Premium Car Wash
+          <span class="line2">at Your <span class="highlight">Convenience</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          Book your wash in seconds. Choose your service, pick a slot, and we'll have your car sparkling clean.
+        </p>
+        <div class="hero-cta-group">
+          <a href="booking.html" class="btn-primary-custom">
+            <i class="fas fa-calendar-check"></i>Book Now — It's Free
+          </a>
+          <a href="#services" class="btn-outline-custom">
+            <i class="fas fa-play-circle"></i>See Services
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="number" data-count="10000" data-suffix="+">10000+</span>
+            <span class="label">Happy Customers</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number">3</span>
+            <span class="label">Service Types</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number">4.9<span style="font-size:1rem">★</span></span>
+            <span class="label">Avg Rating</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="5" data-suffix=" slots">5 slots</span>
+            <span class="label">Daily Slots</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 offset-lg-1 hero-visual mt-5 mt-lg-0">
+        <div class="hero-card-float">
+          <div class="card-header-row">
+            <div class="card-icon-wrap"><i class="fas fa-car-wash"></i></div>
+            <div>
+              <h5>Quick Booking</h5>
+              <p style="font-size:0.75rem;opacity:0.6;margin:0">Done in under 60 seconds</p>
+            </div>
+          </div>
+          <p>Select your service, pick a time slot, and confirm — no registration, no hassle.</p>
+          <ul class="hero-checklist">
+            <li><span class="chk"><i class="fas fa-check"></i></span>No registration required</li>
+            <li><span class="chk"><i class="fas fa-check"></i></span>Instant booking confirmation</li>
+            <li><span class="chk"><i class="fas fa-check"></i></span>Special student discounts</li>
+            <li><span class="chk"><i class="fas fa-check"></i></span>5 flexible daily time slots</li>
+            <li><span class="chk"><i class="fas fa-check"></i></span>Pay at the wash center</li>
+          </ul>
+          <a href="booking.html" class="btn-start">
+            <i class="fas fa-arrow-right me-2"></i>Start Booking Now
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section-pad services-section" id="services">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-title">Our Wash Services</h2>
+      <div class="section-divider mx-auto"></div>
+      <p class="section-subtitle">Choose the perfect wash for your car's needs and budget. All services include professional-grade products.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="service-card">
+          <div class="card-body text-center">
+            <div class="card-icon blue"><i class="fas fa-tint"></i></div>
+            <h5 class="fw-bold mb-2">Basic Exterior Wash</h5>
+            <p class="text-muted small mb-3">A thorough exterior rinse and hand wash to remove dirt, dust, and grime. Perfect for a quick refresh.</p>
+            <ul class="feature-list text-start mb-3">
+              <li><i class="fas fa-check-circle"></i>Exterior rinse &amp; hand wash</li>
+              <li><i class="fas fa-check-circle"></i>Wheel &amp; tyre cleaning</li>
+              <li><i class="fas fa-check-circle"></i>Window wipe-down</li>
+              <li><i class="fas fa-check-circle"></i>~30 minutes service</li>
+            </ul>
+            <div class="price-tag mb-3">Starting ₹199 <small>/ hatchback</small></div>
+            <a href="booking.html" class="btn btn-primary w-100 fw-bold" style="border-radius:50px">
+              <i class="fas fa-calendar-check me-2"></i>Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="service-card" style="border:2px solid #0d6efd">
+          <div class="popular-badge"><i class="fas fa-fire me-1"></i>Most Popular</div>
+          <div class="card-body text-center pt-4">
+            <div class="card-icon cyan"><i class="fas fa-soap"></i></div>
+            <h5 class="fw-bold mb-2">Foam Wash</h5>
+            <p class="text-muted small mb-3">Deep foam treatment that lifts stubborn dirt and leaves your car sparkling clean with a protective shine.</p>
+            <ul class="feature-list text-start mb-3">
+              <li><i class="fas fa-check-circle"></i>High-pressure foam wash</li>
+              <li><i class="fas fa-check-circle"></i>Underbody rinse</li>
+              <li><i class="fas fa-check-circle"></i>Tyre dressing</li>
+              <li><i class="fas fa-check-circle"></i>Streak-free finish</li>
+            </ul>
+            <div class="price-tag mb-3">Starting ₹249 <small>/ hatchback</small></div>
+            <a href="booking.html" class="btn btn-primary w-100 fw-bold" style="border-radius:50px">
+              <i class="fas fa-calendar-check me-2"></i>Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-3">
+        <div class="service-card">
+          <div class="card-body text-center">
+            <div class="card-icon purple"><i class="fas fa-star"></i></div>
+            <h5 class="fw-bold mb-2">Interior + Exterior</h5>
+            <p class="text-muted small mb-3">Complete top-to-bottom detailing — exterior foam wash plus full interior vacuum and wipe-down.</p>
+            <ul class="feature-list text-start mb-3">
+              <li><i class="fas fa-check-circle"></i>Full foam exterior wash</li>
+              <li><i class="fas fa-check-circle"></i>Interior vacuum</li>
+              <li><i class="fas fa-check-circle"></i>Dashboard &amp; console wipe</li>
+              <li><i class="fas fa-check-circle"></i>Air freshener included</li>
+            </ul>
+            <div class="price-tag mb-3">Starting ₹329 <small>/ hatchback</small></div>
+            <a href="booking.html" class="btn btn-primary w-100 fw-bold" style="border-radius:50px">
+              <i class="fas fa-calendar-check me-2"></i>Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section-pad how-section" id="how-it-works">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Simple Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <div class="section-divider mx-auto"></div>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.6)">Book your car wash in 3 easy steps — takes less than a minute.</p>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <span class="step-icon-wrap">🖱️</span>
+          <h5>Choose Your Service</h5>
+          <p>Pick from Basic, Foam, or Full Interior+Exterior wash. Select your car type and user category for accurate pricing.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <span class="step-icon-wrap">🕐</span>
+          <h5>Select a Time Slot</h5>
+          <p>Choose a convenient date and one of our 5 daily time slots — morning, afternoon, or evening. 7 days a week.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-3">
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <span class="step-icon-wrap">✨</span>
+          <h5>Get Your Car Washed</h5>
+          <p>Drive in, relax, and drive out sparkling clean. Our trained team uses professional-grade products every time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="booking.html" class="btn-primary-custom">
+        <i class="fas fa-calendar-check"></i>Book Your Wash Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US ═══ -->
+<section class="section-pad why-section" id="why-us">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Why ShinePro</div>
+      <h2 class="section-title">Why Choose Us?</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3 reveal reveal-delay-1">
+        <div class="why-card">
+          <div class="why-icon i1"><i class="fas fa-bolt"></i></div>
+          <h6>Fast Booking</h6>
+          <p>Book in under 60 seconds with our streamlined 6-step process. No account needed.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal reveal-delay-2">
+        <div class="why-card">
+          <div class="why-icon i2"><i class="fas fa-tag"></i></div>
+          <h6>Student Discounts</h6>
+          <p>Special pricing for students — save up to ₹90 on every wash with a valid student ID.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal reveal-delay-3">
+        <div class="why-card">
+          <div class="why-icon i3"><i class="fas fa-shield-alt"></i></div>
+          <h6>Quality Guaranteed</h6>
+          <p>Professional-grade products and trained staff ensure a perfect wash every single time.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal reveal-delay-4">
+        <div class="why-card">
+          <div class="why-icon i4"><i class="fas fa-calendar-alt"></i></div>
+          <h6>Flexible Slots</h6>
+          <p>5 daily time slots from 9 AM to 5 PM, 7 days a week. Always a slot that fits your schedule.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="section-pad testimonials-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Customer Reviews</div>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="quote">"Booked in literally 30 seconds. The foam wash was incredible — my car looked brand new. Will definitely use again!"</p>
+          <div class="author">
+            <div class="author-avatar">R</div>
+            <div><div class="author-name">Rahul Sharma</div><div class="author-role">Student, Hyderabad</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="quote">"The interior + exterior package is worth every rupee. The team was professional and the car smelled amazing after."</p>
+          <div class="author">
+            <div class="author-avatar">P</div>
+            <div><div class="author-name">Priya Nair</div><div class="author-role">Software Engineer</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-3">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p class="quote">"Super convenient booking system. I love that I can pick my time slot and just show up. No waiting, no hassle."</p>
+          <div class="author">
+            <div class="author-avatar">A</div>
+            <div><div class="author-name">Arjun Mehta</div><div class="author-role">Business Owner</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer pt-5 pb-3" id="contact">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-lg-4">
+        <div class="footer-brand"><i class="fas fa-car-wash" style="color:#00c6ff"></i>Shine<span>Pro</span></div>
+        <p class="footer-desc">Premium car wash services at your convenience. Book online, drive in, drive out sparkling clean.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h6>Quick Links</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h6>Services</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="booking.html">Basic Exterior Wash</a></li>
+          <li><a href="booking.html">Foam Wash</a></li>
+          <li><a href="booking.html">Interior + Exterior</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6>Contact Us</h6>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt icon"></i><span>123 Clean Street, Auto Nagar, Hyderabad – 500001</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone icon"></i><a href="tel:+919876543210">+91 98765 43210</a></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope icon"></i><a href="mailto:hello@shinepro.in">hello@shinepro.in</a></div>
+        <div class="footer-contact-item"><i class="fas fa-clock icon"></i><span>Mon–Sun: 9:00 AM – 6:00 PM</span></div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p>© 2026 ShinePro Car Wash. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color:#ef4444"></i> for clean cars</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
